@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "default_mode": "confirm",
+  "modes": {
+    "observe": "Log risky actions but allow them.",
+    "confirm": "Ask before risky desktop, file deletion, and destructive shell actions.",
+    "block": "Block risky actions automatically. Recommended for smoke tests."
+  },
+  "notes": [
+    "The runtime guard is activated by environment variable, not by storing secrets or machine-specific state in Git.",
+    "Use scripts/jarvis-mark-xl/start-safe.ps1 to launch Mark-XL with the guard enabled.",
+    "The first safety scope is file deletion, risky subprocess commands, and PyAutoGUI desktop interaction calls. Future phases can add UI approval prompts and per-tool allowlists."
+  ]
+}

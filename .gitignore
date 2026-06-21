@@ -1,0 +1,12 @@
+# Jarvis local Python/runtime hygiene
+.venv/
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*.class
+logs/
+*.log
+.env
+.env.*
+config/api_keys.local.json
+config/secrets.json
