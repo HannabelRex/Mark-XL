@@ -584,3 +584,11 @@ def call_llm_stream(
     except Exception as e:
         print(f"[LLM] Stream error: {type(e).__name__}: {e}")
         raise RuntimeError(f"LLM stream failed: {e}")
+
+# Jarvis Gemini provider bridge. This keeps the original Mark-XL provider
+# behavior intact and only activates when llm_provider/JARVIS_PROVIDER is gemini.
+try:
+    from core.jarvis_gemini_bridge import install_gemini_bridge as _install_jarvis_gemini_bridge
+    _install_jarvis_gemini_bridge(globals())
+except Exception as _jarvis_gemini_bridge_error:
+    print(f"[JARVIS] Gemini bridge not loaded: {_jarvis_gemini_bridge_error}")
