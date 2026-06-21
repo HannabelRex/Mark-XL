@@ -10,3 +10,4 @@ logs/
 .env.*
 config/api_keys.local.json
 config/secrets.json
+.phase-backups/
